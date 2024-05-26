@@ -14,6 +14,8 @@ class Company
     public $name;
     public $location;
     public $totEmployees;
+    public static $avgSalary = 1500;
+    public static $totalCounter = 0;
 
     public function __construct(string $name, string $location, int $totEmployees = 0)
     {
@@ -25,17 +27,54 @@ class Company
     public function info()
     {
         if ($this->totEmployees > 0) {
-            echo "L'ufficio {$this->name} con sede in {$this->location} ha ben {$this->totEmployees} dipendenti";
+            echo "L'ufficio {$this->name} con sede in {$this->location} ha ben {$this->totEmployees} dipendenti \n";
         } else {
-            echo "L'ufficio {$this->name} con sede in {$this->location} non ha dipendenti";
+            echo "L'ufficio {$this->name} con sede in {$this->location} non ha dipendenti \n";
         }
+    }
+
+    public function annualCost($number)
+    {
+        return $this->totEmployees * (self::$avgSalary * $number);
+    }
+
+    public function printAnnualCost($month = 12)
+    {
+        echo "------{$this->name}-------- \n";
+        echo "costo annuale: {$this->annualCost($month)} \n";
+    }
+
+    public function totalCost($month = 12)
+    {
+        return self::$totalCounter += $this->annualCost($month);
+    }
+
+    public static function printTotalCost()
+    {
+        echo "La spesa della holding e':" . self::$totalCounter;
     }
 };
 
-$company1 = new Company('Veridian', 'Colorado',);
+$company1 = new Company('Veridian', 'Colorado', 6);
 $company2 = new Company('Celestial', 'Nevada', 142);
 $company3 = new Company('Mystic', 'Maine', 89);
 $company4 = new Company('Quantum', 'Arizona', 310);
 $company5 = new Company('Astral', 'Florida',  75);
 
-echo $company1->info();
+$company1->totalCost();
+$company1->info();
+
+$company2->totalCost();
+$company2->info();
+
+$company3->totalCost();
+$company3->info();
+
+$company4->totalCost();
+$company4->info();
+
+$company5->totalCost();
+$company5->info();
+
+
+Company::printTotalCost();
