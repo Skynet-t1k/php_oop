@@ -27,7 +27,7 @@ class Sport extends Category
 
     public function getMyCategory()
     {
-        echo "Sport \n";
+        echo "Sport  \n";
     }
 }
 
@@ -36,7 +36,7 @@ class Gossip extends Category
 
     public function getMyCategory()
     {
-        echo "Gossip \n";
+        echo "Gossip  \n";
     }
 }
 
@@ -45,19 +45,6 @@ class Storia extends Category
 
     public function getMyCategory()
     {
-        echo "Storia \n";
+        echo "Storia  \n";
     }
 }
-
-
-$attualita = new Attualita();
-$attualita->getMyCategory();
-
-$sport = new Sport();
-$sport->getMyCategory();
-
-$gossip = new Gossip();
-$gossip->getMyCategory();
-
-$storia = new Storia();
-$storia->getMyCategory();
