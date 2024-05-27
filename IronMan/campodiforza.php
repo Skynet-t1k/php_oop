@@ -6,6 +6,6 @@ class CampoDiForza extends Defense
 {
     public function defense()
     {
-        echo "Prova a colpirmi ora!";
+        echo "Prova a colpirmi ora! \n";
     }
 }

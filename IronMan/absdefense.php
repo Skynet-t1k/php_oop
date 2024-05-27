@@ -3,5 +3,5 @@
 abstract class  Defense
 {
 
-    abstract function defense();
+    abstract public function defense();
 }

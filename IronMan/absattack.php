@@ -3,5 +3,5 @@
 abstract class  Attack
 {
 
-    abstract function attack();
+    abstract public function attack();
 }

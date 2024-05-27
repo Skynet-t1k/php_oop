@@ -6,6 +6,6 @@ class TempestaMissili extends Attack
 {
     public function attack()
     {
-        echo "Ecco una piccola sorpresa dalla mia collezione personale!";
+        echo "Ecco una piccola sorpresa dalla mia collezione personale! \n";
     }
 }

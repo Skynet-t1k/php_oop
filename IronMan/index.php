@@ -17,12 +17,24 @@ class IronmanArmour
         $this->difesa = $difesa;
         self::$counter += 1;
     }
+
+    public function ironManAttack()
+    {
+        $this->attacco->attack();
+    }
+    public function ironManDefend()
+    {
+        $this->difesa->defense();
+    }
 }
 
-$ironman1 = new IronmanArmour(new TempestaMissili, new ArmaturaOlografica);
-$ironman2 = new IronmanArmour(new RaggioRepulsore, new ArmaturaOlografica);
-$ironman3 = new IronmanArmour(new TempestaMissili, new CampoDiForza);
-$ironman4 = new IronmanArmour(new RaggioRepulsore, new CampoDiForza);
+$ironman1 = new IronmanArmour(new TempestaMissili(), new ArmaturaOlografica());
+$ironman2 = new IronmanArmour(new RaggioRepulsore(), new ArmaturaOlografica());
+$ironman3 = new IronmanArmour(new TempestaMissili(), new CampoDiForza());
+$ironman4 = new IronmanArmour(new RaggioRepulsore(), new CampoDiForza());
+
+$ironman1->ironManAttack();
+$ironman1->ironManDefend();
 
 
-echo IronmanArmour::$counter;
+echo IronmanArmour::$counter . "\n";
